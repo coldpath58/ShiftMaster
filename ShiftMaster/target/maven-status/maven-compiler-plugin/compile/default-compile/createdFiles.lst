@@ -1,6 +1,10 @@
-com\mycompany\ShiftMaster\FormKaryawan.class
-com\mycompany\ShiftMaster\ShiftMasterApp$Karyawan.class
-com\mycompany\ShiftMaster\ShiftMasterApp$Jadwal.class
-com\mycompany\ShiftMaster\FormKaryawan$1.class
-com\mycompany\ShiftMaster\FormKaryawan$2.class
-com\mycompany\ShiftMaster\ShiftMasterApp.class
+com\mycompany\shiftmaster\view\FormKaryawan$2.class
+com\mycompany\shiftmaster\model\KaryawanModel.class
+com\mycompany\shiftmaster\util\koneksi.class
+com\mycompany\shiftmaster\util\hibernateutil.class
+com\mycompany\shiftmaster\view\FormKaryawan.class
+com\mycompany\shiftmaster\view\PanelPlottingJadwal.class
+com\mycompany\shiftmaster\view\FormKaryawan$1.class
+com\mycompany\shiftmaster\controller\KaryawanController.class
+com\mycompany\shiftmaster\view\MainApp.class
+com\mycompany\shiftmaster\view\PanelPlottingJadwal$1.class

@@ -5,9 +5,26 @@
     <artifactId>ShiftMaster</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
         <exec.mainClass>com.mycompany.ShiftMaster.FormKaryawan</exec.mainClass>
     </properties>
+
+    <dependencies>
+        <!-- Driver MySQL JDBC untuk koneksi ke database -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>9.1.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.15.Final</version>
+        </dependency>
+        
+    </dependencies>
 </project>
