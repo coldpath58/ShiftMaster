@@ -7,11 +7,11 @@ public class MainApp extends JFrame {
 
     public MainApp() {
         setTitle("ShiftMaster - Aplikasi Manajemen Shift & Karyawan");
-        setSize(850, 550);
+        setSize(900, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Membuat JTabbedPane
+        // Membuat JTabbedPane utama
         JTabbedPane tabbedPane = new JTabbedPane();
 
         // Tab 1: Form Karyawan
@@ -22,11 +22,18 @@ public class MainApp extends JFrame {
         PanelPlottingJadwal panelPlotting = new PanelPlottingJadwal();
         tabbedPane.addTab("2. Plotting Jadwal", panelPlotting);
 
-        // --- TAMBAHKAN KODE INI ---
-        // Otomatis refresh data karyawan di tab 2 setiap kali tab tersebut diklik/dibuka
+        // Tab 3: Panel Tukar Shift
+        PanelTukarShift panelTukarShift = new PanelTukarShift();
+        tabbedPane.addTab("3. Tukar Shift", panelTukarShift);
+
+        // Listener untuk Auto-Refresh data saat berpindah tab
         tabbedPane.addChangeListener(e -> {
-            if (tabbedPane.getSelectedIndex() == 1) { // Indeks 1 adalah tab "2. Plotting Jadwal"
+            int index = tabbedPane.getSelectedIndex();
+            if (index == 1) { // Tab 2: Plotting Jadwal
                 panelPlotting.loadDataKaryawanComboBox();
+                panelPlotting.loadMatriksJadwal();
+            } else if (index == 2) { // Tab 3: Tukar Shift
+                panelTukarShift.loadDataJadwal();
             }
         });
 

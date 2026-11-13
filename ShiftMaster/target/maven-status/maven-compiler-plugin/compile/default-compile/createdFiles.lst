@@ -1,10 +1,15 @@
 com\mycompany\shiftmaster\view\FormKaryawan$2.class
 com\mycompany\shiftmaster\model\KaryawanModel.class
-com\mycompany\shiftmaster\util\koneksi.class
 com\mycompany\shiftmaster\util\hibernateutil.class
-com\mycompany\shiftmaster\view\FormKaryawan.class
 com\mycompany\shiftmaster\view\PanelPlottingJadwal.class
+com\mycompany\shiftmaster\service\JadwalService.class
+com\mycompany\shiftmaster\view\PanelTukarShift.class
+com\mycompany\shiftmaster\util\koneksi.class
+com\mycompany\shiftmaster\view\FormKaryawan.class
 com\mycompany\shiftmaster\view\FormKaryawan$1.class
+com\mycompany\shiftmaster\view\PanelTukarShift$1.class
 com\mycompany\shiftmaster\controller\KaryawanController.class
+com\mycompany\shiftmaster\dao\JadwalDAO.class
+com\mycompany\shiftmaster\model\JadwalModel.class
 com\mycompany\shiftmaster\view\MainApp.class
 com\mycompany\shiftmaster\view\PanelPlottingJadwal$1.class

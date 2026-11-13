@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- Datasource: Koneksi ke MySQL (database db_shiftmaster) -->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url"
+                  value="jdbc:mysql://localhost:3306/db_shiftmaster?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="username" value="root" />
+        <property name="password" value="" />
+    </bean>
+
+    <!-- SessionFactory dikelola Spring, membaca file hibernate.cfg.xml yang ada di project -->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:hibernate.cfg.xml" />
+    </bean>
+
+    <!-- Transaction Manager untuk Hibernate -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!-- Mengaktifkan @Transactional (Declarative Transaction via AOP) -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!-- CONTOH DAO (Sesuaikan dengan kelas DAO Karyawan / Jadwal Anda jika sudah ada) -->
+    <bean id="karyawanDao" class="com.mycompany.shiftmaster.dao.KaryawanDAO">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!-- CONTOH Service (Sesuaikan dengan kelas Service Anda jika sudah ada) -->
+    <bean id="karyawanService" class="com.mycompany.shiftmaster.service.KaryawanService">
+        <property name="karyawanDAO" ref="karyawanDao" />
+    </bean>
+
+</beans>
