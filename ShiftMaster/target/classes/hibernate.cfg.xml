@@ -6,7 +6,7 @@
     <session-factory>
         <!-- Kredensial & Koneksi Database Laragon (MySQL/MariaDB) -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_shifmaster?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_shiftmaster?useSSL=false&amp;serverTimezone=UTC</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
         
@@ -17,9 +17,5 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-
-        <!-- daftarkan mapping class dari file model -->
-        <mapping class="com.mycompany.toko_ayam.model.User"/> 
-        <mapping class="com.mycompany.toko_ayam.model.Transaksi"/>
     </session-factory>
 </hibernate-configuration>

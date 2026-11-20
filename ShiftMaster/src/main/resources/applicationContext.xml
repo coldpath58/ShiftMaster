@@ -17,7 +17,7 @@
         <property name="password" value="" />
     </bean>
 
-    <!-- SessionFactory dikelola Spring, membaca file hibernate.cfg.xml yang ada di project -->
+    <!-- SessionFactory dikelola Spring, membaca file hibernate.cfg.xml -->
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
@@ -30,17 +30,7 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <!-- Mengaktifkan @Transactional (Declarative Transaction via AOP) -->
+    <!-- Mengaktifkan @Transactional -->
     <tx:annotation-driven transaction-manager="transactionManager" />
-
-    <!-- CONTOH DAO (Sesuaikan dengan kelas DAO Karyawan / Jadwal Anda jika sudah ada) -->
-    <bean id="karyawanDao" class="com.mycompany.shiftmaster.dao.KaryawanDAO">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
-
-    <!-- CONTOH Service (Sesuaikan dengan kelas Service Anda jika sudah ada) -->
-    <bean id="karyawanService" class="com.mycompany.shiftmaster.service.KaryawanService">
-        <property name="karyawanDAO" ref="karyawanDao" />
-    </bean>
 
 </beans>
